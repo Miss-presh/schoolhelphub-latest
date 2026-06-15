@@ -42,30 +42,6 @@ export function NavigationWrapper() {
         })}
       </nav>
 
-      {/* Currency toggle — NGN / GBP */}
-      <div className="inline-flex bg-brand-lightGreen/70 p-0.5 rounded-lg border border-brand-green/10">
-        <button
-          onClick={() => setCurrency("NGN")}
-          className={`px-2.5 py-1.5 rounded-md text-[11px] font-bold transition-all duration-200 tap-target cursor-pointer flex items-center gap-1 ${
-            currency === "NGN"
-              ? "bg-brand-deepGreen text-white shadow-sm"
-              : "text-brand-mutedSage hover:text-brand-deepGreen"
-          }`}
-        >
-          🇳🇬 <span className="hidden sm:inline">NGN</span>
-        </button>
-        <button
-          onClick={() => setCurrency("GBP")}
-          className={`px-2.5 py-1.5 rounded-md text-[11px] font-bold transition-all duration-200 tap-target cursor-pointer flex items-center gap-1 ${
-            currency === "GBP"
-              ? "bg-brand-deepGreen text-white shadow-sm"
-              : "text-brand-mutedSage hover:text-brand-deepGreen"
-          }`}
-        >
-          🇬🇧 <span className="hidden sm:inline">GBP</span>
-        </button>
-      </div>
-
       {/* Book a Session CTA */}
       <Link
         href="/#book"
