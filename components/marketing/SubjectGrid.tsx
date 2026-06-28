@@ -58,16 +58,11 @@ export default function SubjectGrid() {
 
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-14 space-y-4 reveal">
-          <span className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-brand-midGreen bg-brand-lightGreen px-4 py-1.5 rounded-full border border-brand-green/10">
-            <span className="w-4 h-px bg-brand-midGreen" />
-            What We Teach
-            <span className="w-4 h-px bg-brand-midGreen" />
-          </span>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-deepGreen">
             Our <em className="italic text-brand-midGreen">Subjects</em>
           </h2>
           <p className="text-brand-mutedSage font-light text-base">
-            Primary through Secondary — exam prep, core subjects, and skills for life.
+            Primary through Secondary exam prep, core subjects, and skills for life.
           </p>
         </div>
 

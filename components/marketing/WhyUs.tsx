@@ -4,7 +4,7 @@ const reasons = [
   {
     icon: "📋",
     title: "Written Report After Every Session",
-    body: "Every lesson ends with a detailed written report sent directly to you — what was covered, how your child did, and exactly what to focus on next. No guessing.",
+    body: "Every lesson ends with a detailed written report sent directly to you, what was covered, how your child did, and exactly what to focus on next. No guessing.",
     tag: "Unique to us",
     tagStyle: "bg-brand-yellow/15 text-brand-deepGreen border border-brand-yellow/30",
   },
@@ -25,21 +25,21 @@ const reasons = [
   {
     icon: "🌍",
     title: "Built for Nigeria & the UK",
-    body: "The only tutoring service that covers both WAEC, BECE, NECO *and* UK GCSE, 11+, KS2/KS3 — in a single programme with teachers who know both systems from the inside.",
+    body: "The only tutoring service that covers both WAEC, BECE, NECO *and* UK GCSE, 11+, KS2/KS3 in a single programme with teachers who know both systems from the inside.",
     tag: "Nigeria + UK",
     tagStyle: "bg-brand-yellow/15 text-brand-deepGreen border border-brand-yellow/30",
   },
   {
     icon: "🕐",
     title: "Flexible — Morning, Afternoon or Evening",
-    body: "Classes run across all time zones to suit families in Lagos or London. Choose times that fit school runs and family life — not the other way around.",
+    body: "Classes run across all time zones to suit families in Lagos or London. Choose times that fit school runs and family life not the other way around.",
     tag: "All timezones",
     tagStyle: "bg-brand-lightGreen text-brand-green border border-brand-green/15",
   },
   {
     icon: "🎯",
     title: "Curriculum-Aligned, Exam-Focused",
-    body: "Lessons are mapped to the exact syllabus your child follows. No generic content — every session prepares them for the real exams that determine their future.",
+    body: "Lessons are mapped to the exact syllabus your child follows. No generic content, every session prepares them for the real exams that determine their future.",
     tag: "Exam-ready",
     tagStyle: "bg-brand-yellow/15 text-brand-deepGreen border border-brand-yellow/30",
   },
@@ -66,7 +66,7 @@ export default function WhyUs() {
             <em className="italic text-brand-midGreen">Actually Works</em>
           </h2>
           <p className="text-brand-mutedSage font-light text-base leading-relaxed">
-            These are the reasons families stay with Schoolhelphub year after year — no signup needed to see the difference.
+            These are the reasons families stay with Schoolhelphub year after year, no signup needed to see the difference.
           </p>
         </div>
 
@@ -103,7 +103,7 @@ export default function WhyUs() {
           <div className="bg-brand-deepGreen rounded-2xl p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
             <div className="space-y-2">
               <p className="text-white font-serif text-xl sm:text-2xl font-bold leading-tight">
-                See the difference yourself — for free.
+                See the difference yourself for free.
               </p>
               <p className="text-white/55 text-sm font-light">
                 Book a trial session today. No payment, no commitment.

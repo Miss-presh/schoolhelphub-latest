@@ -62,13 +62,6 @@ export default function Hero() {
 
       <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-20 transition-opacity duration-700 ${mounted ? "opacity-100" : "opacity-0"}`}>
 
-        {/* Tagline pill */}
-        <div className="flex justify-center mb-8 animate-fadeInUp" style={{ animationDelay: "0.05s" }}>
-          <span className="bg-brand-lightGreen text-brand-midGreen text-[11px] font-bold tracking-widest uppercase px-5 py-2 rounded-full border border-brand-midGreen/25">
-            A simplified learning approach
-          </span>
-        </div>
-
         {/* ── MAIN HEADLINE ── */}
         <div className="text-center mb-12 animate-fadeInUp" style={{ animationDelay: "0.1s" }}>
           <p className="font-serif text-2xl sm:text-3xl font-bold text-brand-yellow leading-none mb-2">
@@ -135,12 +128,12 @@ export default function Hero() {
                   <p className="text-brand-deepGreen font-semibold text-sm leading-snug">
                     &ldquo;My daughter used to hate Maths. Now she actually asks to do extra practice!&rdquo;
                   </p>
-                  <p className="text-brand-mutedSage text-xs mt-1.5 font-medium">— Parent, Lagos 🇳🇬</p>
+                  <p className="text-brand-mutedSage text-xs mt-1.5 font-medium"> Parent, Lagos 🇳🇬</p>
                 </div>
               </div>
               <div className="absolute -top-3 -right-3 bg-brand-yellow text-brand-deepGreen font-black text-xs px-4 py-2.5 rounded-xl shadow-lg border-2 border-white z-10">
                 Ages 5–16
-              </div>
+              </div> 
             </div>
 
             {/* CTAs */}

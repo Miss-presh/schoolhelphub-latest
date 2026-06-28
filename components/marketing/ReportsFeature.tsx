@@ -29,7 +29,7 @@ export default function ReportsFeature() {
 
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
             Know Exactly How<br />
-            Your Child Is Doing —<br />
+            Your Child Is Doing<br />
             <em className="italic text-brand-yellow">Always</em>
           </h2>
 

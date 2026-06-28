@@ -10,7 +10,7 @@ const testimonials = [
     flag: "🇳🇬",
   },
   {
-    quote: "Finding quality UK-style tutoring in Texas felt impossible — until Schoolhelphub. The tutors are exceptional and my son genuinely looks forward to his sessions every week.",
+    quote: "Finding quality UK-style tutoring in Texas felt impossible until Schoolhelphub. The tutors are exceptional and my son genuinely looks forward to his sessions every week.",
     name: "Marcus K.",
     meta: "Parent · Texas, USA · IGCSE Student",
     initials: "MK",
@@ -44,7 +44,7 @@ export default function Testimonials() {
             Across <em className="italic text-brand-midGreen">Nigeria, UK & US</em>
           </h2>
           <p className="text-brand-mutedSage font-light text-base">
-            Real results, honest feedback — from parents who&apos;ve seen the difference.
+            Real results, honest feedback from parents who&apos;ve seen the difference.
           </p>
         </div>
 

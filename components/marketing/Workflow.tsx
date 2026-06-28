@@ -5,8 +5,8 @@ import Link from "next/link";
 
 const steps = [
   { num: "01", icon: "📚", title: "Choose a Subject", desc: "Maths, English, Science, Coding, Languages, or Exam Prep." },
-  { num: "02", icon: "📅", title: "Book a Session", desc: "Pick your timezone slot — no payment, no commitment." },
-  { num: "03", icon: "💻", title: "Attend Live Class", desc: "Join an interactive online session — recorded for replay." },
+  { num: "02", icon: "📅", title: "Book a Session", desc: "Pick your timezone slot, no payment, no commitment." },
+  { num: "03", icon: "💻", title: "Attend Live Class", desc: "Join an interactive online session, recorded for replay." },
   { num: "04", icon: "📋", title: "Get Your Report", desc: "Full written tutor report in your inbox within 24 hours." },
   { num: "05", icon: "📈", title: "Track & Grow", desc: "Subscribe monthly and watch confidence build." },
 ];
@@ -18,16 +18,11 @@ export default function Workflow() {
 
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4 reveal">
-          <span className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-brand-midGreen bg-brand-lightGreen px-4 py-1.5 rounded-full border border-brand-green/10">
-            <span className="w-4 h-px bg-brand-midGreen" />
-            Simple Process
-            <span className="w-4 h-px bg-brand-midGreen" />
-          </span>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-deepGreen">
-            How <em className="italic text-brand-midGreen">Schoolhelphub</em> Works
+            How <em className="italic text-brand-midGreen">Schoolhelphub</em> Works?
           </h2>
           <p className="text-brand-mutedSage text-base font-light">
-            From first enquiry to measurable results — everything is handled.
+            From first enquiry to measurable results, everything is handled.
           </p>
         </div>
 

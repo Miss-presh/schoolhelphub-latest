@@ -33,9 +33,6 @@ export default function HomePage() {
               <span className="font-serif text-xl font-bold text-brand-deepGreen tracking-tight">
                 School<span className="text-brand-midGreen font-light font-sans">help</span>hub
               </span>
-              <span className="text-[10px] text-brand-mutedSage font-medium tracking-wide hidden sm:block">
-                A simplified learning approach
-              </span>
             </div>
           </Link>
           <NavigationWrapper />

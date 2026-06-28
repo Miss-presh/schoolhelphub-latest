@@ -50,7 +50,7 @@ const team = [
     fallbackBg: "bg-teal-700",
     initials: "CN",
     name: "Mrs. Nwosu",
-    role: "Lead Science Tutor — Biology & Chemistry",
+    role: "Lead Science Tutor, Biology & Chemistry",
     bio: "University of Abuja graduate with a BSc in Biological Sciences and 10 years tutoring secondary students across NECO, WAEC and IGCSE syllabi. Passionate about hands-on learning.",
     flag: "🇳🇬",
     location: "Abuja, Nigeria",
@@ -84,7 +84,7 @@ const values = [
   {
     icon: "📋",
     title: "Written Report After Every Session",
-    desc: "Every lesson ends with a detailed written report — what was covered, how your child performed, and exactly what to work on next. You are never left guessing.",
+    desc: "Every lesson ends with a detailed written report, what was covered, how your child performed, and exactly what to work on next. You are never left guessing.",
   },
   {
     icon: "👩🏾‍🏫",
@@ -94,7 +94,7 @@ const values = [
   {
     icon: "🎯",
     title: "Curriculum-Aligned, Exam-Focused",
-    desc: "Every session maps directly to the syllabus your child follows. No generic content — only targeted preparation for the real exams that shape their future.",
+    desc: "Every session maps directly to the syllabus your child follows. No generic content, only targeted preparation for the real exams that shape their future.",
   },
 ];
 
@@ -168,7 +168,7 @@ export default function AboutPage() {
               <em className="italic text-brand-midGreen">Your Child&apos;s Progress</em>
             </h2>
             <p className="text-brand-mutedSage text-sm font-light">
-              Qualified, vetted teachers from Nigeria and the UK — with real experience in the exams that matter.
+              Qualified, vetted teachers from Nigeria and UK with real experience in the exams that matter.
             </p>
           </div>
 
@@ -232,7 +232,7 @@ export default function AboutPage() {
             href="/#book"
             className="inline-flex items-center gap-2 bg-brand-yellow hover:bg-brand-deepYellow text-brand-deepGreen font-bold px-8 py-4 rounded-xl text-sm tap-target transition-all duration-200 hover:-translate-y-0.5 shadow-xl shadow-brand-yellow/25"
           >
-            📚 Book Free Trial — No Payment Needed
+            📚 Book Free Trial, No Payment Needed
           </Link>
         </div>
       </section>

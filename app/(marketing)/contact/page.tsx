@@ -68,7 +68,7 @@ export default function ContactPage() {
             <em className="italic text-brand-yellow">Hear From You</em>
           </h1>
           <p className="text-white/65 text-base font-light leading-relaxed max-w-lg mx-auto">
-            Whether you have a question about sessions, pricing, or want to apply as a tutor — our team responds within 24 hours.
+            Whether you have a question about sessions, pricing, or want to apply as a tutor, our team responds within 24 hours.
           </p>
         </div>
       </section>
