@@ -1,23 +1,7 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Cormorant_Garamond } from "next/font/google";
 import { CurrencyProvider } from "@/context/CurrencyContext";
 import ScrollReveal from "@/components/ScrollReveal";
 import "@/app/globals.css";
-
-const sansFont = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-sans",
-  display: "swap",
-});
-
-const serifFont = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-serif",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Schoolhelphub — Expert Online Tutoring | Nigeria · UK · USA",
@@ -46,7 +30,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${sansFont.variable} ${serifFont.variable} scroll-smooth`}>
+    <html lang="en" className="scroll-smooth">
       <body className="bg-brand-cream text-brand-textNearBlack font-sans antialiased">
         <CurrencyProvider>
           <ScrollReveal />
