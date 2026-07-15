@@ -23,7 +23,7 @@ const tiers = [
       "Parent dashboard access",
       "Mon–Thurs schedule",
     ],
-    cta: "Book a Session",
+    cta: " Book a Free Academic Assessment",
   },
   {
     name: "Group GCSE",
@@ -55,7 +55,7 @@ const tiers = [
       "Detailed session reports",
       "Priority tutor matching",
     ],
-    cta: "Book a Session",
+    cta: " Book a Free Academic Assessment",
   },
 ];
 

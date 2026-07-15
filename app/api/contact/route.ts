@@ -24,7 +24,6 @@ export async function POST(request: Request) {
       phone: "",
       childAge: "",
       subject,
-      timezone: "",
       message,
       source: "contact-form",
     };

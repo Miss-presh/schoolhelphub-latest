@@ -2,21 +2,17 @@
 
 import { NavigationWrapper } from "./(marketing)/NavigationWrapper";
 import Hero from "@/components/marketing/Hero";
-import TrustBar from "@/components/marketing/TrustBar";
-import Workflow from "@/components/marketing/Workflow";
 import SubjectGrid from "@/components/marketing/SubjectGrid";
 import WhyUs from "@/components/marketing/WhyUs";
 import StudentPhotos from "@/components/marketing/StudentPhotos";
-import ReportsFeature from "@/components/marketing/ReportsFeature";
 import Testimonials from "@/components/marketing/Testimonials";
 import CaptureForm from "@/components/marketing/CaptureForm";
 import Link from "next/link";
-
-const footerLinks = {
-  Subjects: ["Mathematics", "English", "Science", "Coding", "Languages", "Exam Prep"],
-  Company: ["About Us", "Our Tutors", "How It Works", "Pricing", "Results"],
-  Support: ["Contact Us", "FAQs", "Privacy Policy", "Terms of Service", "Safeguarding"],
-};
+import Programmes from "@/components/marketing/Progammes";
+import HowitWorks from "@/components/marketing/HowItWorks";
+import PricingSection from "@/components/marketing/PricingSection";
+import Footer from "@/components/marketing/Footer";
+import FAQ from "@/components/marketing/FAQ";
 
 export default function HomePage() {
   return (
@@ -42,133 +38,19 @@ export default function HomePage() {
       {/* ── Page Sections ── */}
       <main className="flex-grow">
         <Hero />
-        <TrustBar />
-        <Workflow />
-        <SubjectGrid />
         <WhyUs />
+        <SubjectGrid />
+        <Programmes />
+        <HowitWorks />
         <StudentPhotos />
-        <ReportsFeature />
         <Testimonials />
-
-        {/* ── Pricing Teaser ── */}
-        <section className="py-16 bg-brand-lightGreen/40 px-4 sm:px-6 lg:px-8 border-y border-brand-lightGreen/60">
-          <div className="max-w-4xl mx-auto text-center space-y-5 reveal">
-            <span className="inline-block text-xs font-bold tracking-widest uppercase text-brand-midGreen">
-              Transparent Pricing
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-deepGreen">
-              Starts from <span className="text-brand-midGreen">₦60,000</span> /month
-            </h2>
-            <p className="text-brand-mutedSage font-light text-base max-w-xl mx-auto">
-              All plans include a free first session, written reports after every class, and no long-term contracts.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-              <Link
-                href="/pricing"
-                className="inline-flex items-center gap-2 bg-brand-deepGreen hover:bg-brand-green text-white font-bold px-7 py-3.5 rounded-xl text-sm transition-all duration-200 tap-target hover:-translate-y-0.5 shadow-md"
-              >
-                See All Plans & Pricing →
-              </Link>
-              <Link
-                href="/#book"
-                className="inline-flex items-center gap-2 border-2 border-brand-green text-brand-green hover:bg-brand-green hover:text-white font-bold px-7 py-3.5 rounded-xl text-sm transition-all duration-200 tap-target"
-              >
-                📚 Book a Session
-              </Link>
-            </div>
-          </div>
-        </section>
-
+        <PricingSection />
+        <FAQ />
         <CaptureForm />
-
-        {/* ── Final CTA Banner ── */}
-        <section className="bg-brand-green py-20 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
-          <div className="absolute bottom-[-40px] left-10 w-40 h-40 border border-brand-yellow/10 rounded-[50%_0_50%_0] rotate-45 pointer-events-none" />
-          <div className="absolute top-8 right-20 w-24 h-24 border border-white/8 rounded-[50%_0_50%_0] rotate-12 pointer-events-none" />
-
-          <div className="relative z-10 max-w-3xl mx-auto space-y-6 reveal">
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
-              Ready to Give Your Child<br />
-              the Support They{" "}
-              <em className="italic text-brand-yellow">Deserve?</em>
-            </h2>
-            <p className="text-white/65 text-base font-light">
-              Join hundreds of families across Nigeria, UK and the US who trust Schoolhelphub.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-              <Link
-                href="/#book"
-                className="w-full sm:w-auto bg-brand-yellow hover:bg-brand-deepYellow text-brand-deepGreen font-bold px-8 py-4 rounded-xl text-sm shadow-xl shadow-brand-yellow/25 hover:-translate-y-0.5 transition-all duration-200 tap-target"
-              >
-                📚 Book a Session Today, No Payment Needed
-              </Link>
-              <Link
-                href="/#subjects"
-                className="w-full sm:w-auto text-white/75 hover:text-white border border-white/25 hover:border-white/55 font-semibold px-8 py-4 rounded-xl text-sm transition-all duration-200 tap-target"
-              >
-                See Our Subjects →
-              </Link>
-            </div>
-          </div>
-        </section>
+        <Footer />
       </main>
 
-      {/* ── Footer ── */}
-      <footer className="bg-brand-deepGreen text-white px-4 sm:px-6 lg:px-8 pt-16 pb-8 relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-brand-green via-brand-yellow to-brand-green" />
-        <div className="max-w-7xl mx-auto">
-
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-10 pb-12 border-b border-white/8">
-
-            {/* Brand col */}
-            <div className="col-span-2 sm:col-span-1">
-              <div className="flex items-center gap-2.5 mb-4">
-                <div className="w-8 h-8 bg-brand-yellow rounded-xl flex items-center justify-center font-serif font-bold text-brand-deepGreen">S</div>
-                <span className="font-serif text-lg font-bold text-white">School<span className="text-brand-yellow font-light font-sans">help</span>hub</span>
-              </div>
-              <p className="text-white/40 text-xs leading-relaxed max-w-[210px] mb-4 font-light">
-                Expert online tutoring for primary and secondary students across Nigeria, UK and USA. Live classes. Written reports after every session.
-              </p>
-              <div className="text-xl mb-5">🇳🇬 🇬🇧</div>
-              <div className="flex gap-2">
-                {(["f", "in", "li"] as const).map((s) => (
-                  <a key={s} href="#" className="w-8 h-8 bg-white/8 hover:bg-brand-yellow hover:text-brand-deepGreen text-white/50 rounded-lg flex items-center justify-center text-[10px] font-bold uppercase transition-all duration-200">
-                    {s}
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* Link cols */}
-            {Object.entries(footerLinks).map(([col, links]) => (
-              <div key={col}>
-                <p className="text-white text-[10px] font-bold tracking-widest uppercase mb-4">{col}</p>
-                <ul className="space-y-2.5">
-                  {links.map((l) => (
-                    <li key={l}>
-                      <Link href="#" className="text-white/38 hover:text-brand-yellow text-xs font-light transition-colors duration-150">
-                        {l}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-
-          <div className="pt-7 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/22">
-            <p>© {new Date().getFullYear()} Schoolhelphub. All rights reserved.</p>
-            <div className="flex items-center gap-4">
-              <a href="https://wa.me/2347043523556" className="hover:text-brand-yellow transition-colors" target="_blank" rel="noopener noreferrer">
-                WhatsApp: +234 704 352 3556
-              </a>
-              <span>·</span>
-              <span>@Schoolhelphub</span>
-            </div>
-          </div>
-        </div>
-      </footer>
+    
 
       {/* ── WhatsApp FAB ── */}
       <a

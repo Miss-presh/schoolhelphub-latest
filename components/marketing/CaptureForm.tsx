@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
+import { Country } from "country-state-city";
 
 type FormState = "idle" | "loading" | "success" | "error";
 
@@ -10,8 +11,13 @@ const SUBJECT_OPTIONS = [
   "Languages (French/Spanish)", "11+ Exam Prep", "GCSE Exam Prep",
   "WAEC / BECE / NECO Prep", "SAT / ACT Prep",
 ];
-const TIMEZONE_OPTIONS = [
-  "🇳🇬 Nigeria (WAT — UTC+1)", "🇬🇧 United Kingdom (GMT/BST)", "Other",
+
+const priorityCountries = [
+  "Nigeria",
+  "United Kingdom",
+  "United States",
+  "Canada",
+  "United Arab Emirates",
 ];
 
 const reassurances = [
@@ -30,9 +36,24 @@ export default function CaptureForm() {
     phone: "",
     childAge: "",
     subject: "",
-    timezone: "",
+    country: "",
     message: "",
   });
+
+  const countries = useMemo(() => Country.getAllCountries(), []);
+  const [ ,setCountrySearch] = useState("");
+  const [showCountries, setShowCountries] = useState(false);
+
+  const filteredCountries = [
+    ...countries.filter(c => priorityCountries.includes(c.name)),
+    ...countries.filter(
+      c =>
+        !priorityCountries.includes(c.name) &&
+        c.name.toLowerCase().includes(form.country.toLowerCase())
+    ),
+  ];
+
+  const countryRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (state !== "success") return;
@@ -70,12 +91,29 @@ export default function CaptureForm() {
       }
 
       setState("success");
-      setForm({ parentName: "", email: "", phone: "", childAge: "", subject: "", timezone: "", message: "" });
+      setForm({ parentName: "", email: "", phone: "", childAge: "", subject: "", country: "", message: "" });
     } catch (err) {
       setState("error");
       setErrorMsg(err instanceof Error ? err.message : "Something went wrong. Please try WhatsApp.");
     }
   };
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        countryRef.current &&
+        !countryRef.current.contains(event.target as Node)
+      ) {
+        setShowCountries(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <section id="book" className="py-20 lg:py-28 bg-brand-cream px-4 sm:px-6 lg:px-8">
@@ -119,7 +157,7 @@ export default function CaptureForm() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20BA5A] text-white font-bold px-6 py-3.5 rounded-xl text-sm transition-all duration-200 shadow-md hover:-translate-y-0.5 tap-target"
           >
-            <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.179.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.239 3.48 8.421-.003 6.557-5.338 11.902-11.892 11.902-2.004-.001-3.973-.51-5.713-1.479L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.747 1.451 5.436 0 9.86-4.37 9.864-9.742.002-2.602-1.01-5.05-2.85-6.892-1.84-1.842-4.29-2.856-6.889-2.858-5.441 0-9.867 4.371-9.871 9.743-.001 1.933.507 3.821 1.474 5.485L1.922 22.18l4.725-1.026z"/></svg>
+            <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.179.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.239 3.48 8.421-.003 6.557-5.338 11.902-11.892 11.902-2.004-.001-3.973-.51-5.713-1.479L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.747 1.451 5.436 0 9.86-4.37 9.864-9.742.002-2.602-1.01-5.05-2.85-6.892-1.84-1.842-4.29-2.856-6.889-2.858-5.441 0-9.867 4.371-9.871 9.743-.001 1.933.507 3.821 1.474 5.485L1.922 22.18l4.725-1.026z" /></svg>
             Or Book via WhatsApp
           </a>
         </div>
@@ -143,7 +181,7 @@ export default function CaptureForm() {
             </div>
           ) : (
             <>
-              <h3 className="font-serif text-2xl font-bold text-brand-deepGreen mb-7">Book a Session</h3>
+              <h3 className="font-serif text-2xl font-bold text-brand-deepGreen mb-7"> Book a Free Academic Assessment</h3>
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -174,12 +212,62 @@ export default function CaptureForm() {
                       {SUBJECT_OPTIONS.map((o) => <option key={o}>{o}</option>)}
                     </select>
                   </Field>
-                  <Field label="Your Timezone">
-                    <select required value={form.timezone} onChange={set("timezone")} className={inputClass}>
-                      <option value="">Select timezone...</option>
-                      {TIMEZONE_OPTIONS.map((o) => <option key={o}>{o}</option>)}
-                    </select>
-                  </Field>
+                  <div
+                    ref={countryRef}
+                    className="space-y-2 relative">
+                    <label className="text-sm font-semibold text-brand-deepGreen">
+                      Country of Residence
+                    </label>
+
+                    <input
+                      type="text"
+                      value={form.country}
+                      onChange={(e) => {
+                        const value = e.target.value;
+
+                        setCountrySearch(value);
+
+                        setForm((prev) => ({
+                          ...prev,
+                          country: e.target.value,
+                        }));
+
+                        setShowCountries(true);
+                      }}
+                      onFocus={() => setShowCountries(true)}
+                      placeholder="Search your country..."
+                      className="w-full rounded-xl border border-brand-lightGreen bg-white px-4 py-3 outline-none focus:border-brand-green focus:ring-4 focus:ring-brand-lightGreen"
+                    />
+
+                    {showCountries && (
+                      <div className="absolute z-50 mt-2 max-h-64 w-full overflow-y-auto rounded-xl border border-brand-lightGreen bg-white shadow-2xl">
+
+                        {filteredCountries.map((country) => (
+                          <button
+                            key={country.isoCode}
+                            type="button"
+                            onClick={() => {
+                              setForm((prev) => ({
+                                ...prev,
+                                country: country.name,
+                              }));
+
+                              setShowCountries(false);
+                            }}
+                            className="flex w-full items-center px-4 py-3 hover:bg-brand-faintGreen transition"
+                          >
+                            {country.name}
+                          </button>
+                        ))}
+
+                        {filteredCountries.length === 0 && (
+                          <div className="px-4 py-3 text-brand-mutedSage">
+                            No country found.
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
                 </div>
 
                 <Field label="Anything We Should Know? (optional)">
@@ -201,7 +289,7 @@ export default function CaptureForm() {
                     <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
                   ) : (
                     <>
-                      Book A Session
+                      Book a Free Academic Assessment
                       <span className="w-7 h-7 rounded-full bg-brand-yellow text-brand-deepGreen flex items-center justify-center text-xs font-bold">→</span>
                     </>
                   )}

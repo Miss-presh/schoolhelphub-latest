@@ -13,7 +13,7 @@ Google Apps Script web app. No extra npm packages are needed.
 
    | A | B | C | D | E | F | G | H |
    |---|---|---|---|---|---|---|---|
-   | Submitted At | Parent Name | Email | Phone | Child Age | Subject | Timezone | Message |
+   | Submitted At | Parent Name | Email | Phone | Child Age | Subject | Country | Message |
 
 ---
 
@@ -36,7 +36,7 @@ function doPost(e) {
       data.phone       || "",
       data.childAge    || "",
       data.subject     || "",
-      data.timezone    || "",
+      data.country    || "",
       data.message     || "",
     ]);
 
@@ -116,7 +116,7 @@ function doPost(e) {
       "Phone: " + data.phone,
       "Child age: " + data.childAge,
       "Subject: " + data.subject,
-      "Timezone: " + data.timezone,
+      "Country: " + data.country,
       "Message: " + data.message,
     ].join("\n")
   });

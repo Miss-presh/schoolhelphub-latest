@@ -53,13 +53,13 @@ const subjects = [
 
 export default function SubjectGrid() {
   return (
-    <section id="subjects" className="py-20 lg:py-28 bg-white px-4 sm:px-6 lg:px-8">
+    <section id="subjects" className="py-5 bg-white px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-14 space-y-4 reveal">
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-deepGreen">
-            Our <em className="italic text-brand-midGreen">Subjects</em>
+          What Do You <em className="italic text-brand-midGreen">Want to Learn?</em>
           </h2>
           <p className="text-brand-mutedSage font-light text-base">
             Primary through Secondary exam prep, core subjects, and skills for life.

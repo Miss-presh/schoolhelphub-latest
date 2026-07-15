@@ -4,9 +4,9 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
 
-    const { parentName, email, phone, childAge, subject, timezone, message } = body;
+    const { parentName, email, phone, childAge, subject, country, message } = body;
 
-    if (!parentName || !email || !phone || !childAge || !subject || !timezone) {
+    if (!parentName || !email || !phone || !childAge || !subject || !country) {
       return NextResponse.json({ error: "Please fill in all required fields." }, { status: 400 });
     }
 
@@ -19,7 +19,7 @@ export async function POST(request: Request) {
 
     if (!webhookUrl || webhookUrl.includes("PASTE_YOUR")) {
       console.warn("[book-trial] GOOGLE_SHEETS_WEBHOOK_URL not configured — logging locally.");
-      console.log("[book-trial] Submission:", { parentName, email, phone, childAge, subject, timezone, message });
+      console.log("[book-trial] Submission:", { parentName, email, phone, childAge, subject, country, message });
       return NextResponse.json({ success: true, note: "Logged locally" });
     }
 
@@ -29,7 +29,7 @@ export async function POST(request: Request) {
       phone,
       childAge,
       subject,
-      timezone,
+      country,
       message: message || "",
       submittedAt: new Date().toISOString(),
       source: "schoolhelphub-website",

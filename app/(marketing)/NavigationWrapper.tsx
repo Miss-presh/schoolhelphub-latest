@@ -5,12 +5,46 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { name: "Subjects", href: "/#subjects" },
-  { name: "How It Works", href: "/#how-it-works" },
-  { name: "Tutors", href: "/tutors" },
-  { name: "Pricing", href: "/pricing" },
-  { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "Subjects",
+    href: "/#subjects",
+  },
+  {
+    name: "Programmes",
+    href: "/#programmes",
+  },
+  {
+    name: "Tutors",
+    href: "/tutors",
+  },
+  {
+    name: "Testimonials",
+    href: "/testimonials",
+  },
+  {
+    name: "Pricing",
+    href: "/pricing",
+  },
+  {
+    name: "About Us",
+    href: "/about",
+  },
+  {
+    name: "FAQ",
+    href: "/#faq",
+  },
+  // {
+  //   name: "Blog",
+  //   href: "/blog",
+  // },
+  {
+    name: "Contact",
+    href: "/contact",
+  },
 ];
 
 export function NavigationWrapper() {
@@ -21,14 +55,14 @@ export function NavigationWrapper() {
     <div className="flex items-center gap-3 sm:gap-5 font-sans relative">
 
       {/* Desktop nav links */}
-      <nav className="hidden xl:flex items-center gap-6">
+      <nav className="hidden xl:flex items-center gap-5">
         {navLinks.map((link) => {
           const isActive = pathname === link.href;
           return (
             <Link
               key={link.name}
               href={link.href}
-              className={`text-sm font-semibold transition-colors duration-150 relative py-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:transition-all after:duration-200 ${
+              className={`text-[15px] font-medium transition-colors duration-150 relative py-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:transition-all after:duration-200 ${
                 isActive
                   ? "text-brand-deepGreen after:w-full after:bg-brand-deepGreen"
                   : "text-brand-mutedSage hover:text-brand-deepGreen after:w-0 hover:after:w-full after:bg-brand-midGreen"
@@ -40,12 +74,12 @@ export function NavigationWrapper() {
         })}
       </nav>
 
-      {/* Book a Session CTA */}
+      {/*  Book a Free Academic Assessment CTA */}
       <Link
         href="/#book"
         className="hidden sm:inline-flex items-center gap-2 bg-brand-yellow hover:bg-brand-deepYellow text-brand-deepGreen font-bold px-5 py-2.5 rounded-xl text-sm transition-all duration-150 shadow-md shadow-brand-yellow/20 hover:-translate-y-0.5 tap-target whitespace-nowrap"
       >
-        Book a Session →
+        Book A Free Academic Assessment →
       </Link>
 
       {/* Mobile burger */}
@@ -84,7 +118,7 @@ export function NavigationWrapper() {
               onClick={() => setOpen(false)}
               className="block w-full bg-brand-yellow hover:bg-brand-deepYellow text-brand-deepGreen font-bold py-3.5 rounded-xl text-center text-sm tap-target"
             >
-              📚 Book a Session
+              📚 Book A Free Academic Assessment
             </Link>
             <a
               href="https://wa.me/2347043523556?text=Hi%20Schoolhelphub%2C%20I%27d%20like%20to%20book%20a%20free%20trial."
