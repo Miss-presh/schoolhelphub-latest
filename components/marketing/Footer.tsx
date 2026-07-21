@@ -61,18 +61,24 @@ export default function Footer() {
                 <Image
                   src="/boy1.jpg"
                   alt="boy"
+                  width={200}
+                  height={200}
                   className="w-16 h-16 rounded-full border-4 border-brand-green object-cover"
                 />
 
                 <Image
-                  src="/girl2.jpg"
+                  src="/Girl1.jpg"
                   alt="girl"
+                  width={200}
+                  height={200}
                   className="w-16 h-16 rounded-full border-4 border-white object-cover"
                 />
 
                 <Image
                   src="/boy2.jpg"
                   alt="boy"
+                  width={200}
+                  height={200}
                   className="w-16 h-16 rounded-full border-4 border-brand-yellow object-cover"
                 />
 

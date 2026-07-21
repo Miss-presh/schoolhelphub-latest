@@ -82,21 +82,12 @@ export default function Hero() {
           }}
         >
           <Image
-            src="/boy.png"
-            alt="Student learning online"
+            src="/hub3.jpg"
+            alt="Parent working on a laptop at home"
             fill
             priority
-            className="object-cover object-center"
           />
         </motion.div>
-
-        {/* Overlay */}
-
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/45 to-black/20" />
-
-        {/* soft green tint */}
-
-        <div className="absolute inset-0 bg-brand-deepGreen/20" />
 
         {/* Content */}
 
@@ -191,7 +182,7 @@ export default function Hero() {
               ease: "easeInOut"
             }
           }}
-          className="absolute top-32 right-10 bg-white rounded-3xl shadow-2xl p-6 hidden xl:block"
+          className="absolute top-16 right-10 bg-white rounded-3xl shadow-2xl p-6 hidden xl:block"
         >
           <p className="uppercase text-xs tracking-widest text-gray-500">
 
